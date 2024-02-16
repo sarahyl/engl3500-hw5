@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cj1vyr6kvr67l" path="res://Scenes/crate.tscn" id="4_onmak"]
 [ext_resource type="Texture2D" uid="uid://duqvx7htykro6" path="res://Art/tree.png" id="5_gwuyb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tdo"]
-size = Vector2(53.8982, 646.778)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a07np"]
+size = Vector2(95.7411, 91.8549)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amvju")
@@ -20,7 +20,12 @@ collision_mask = 3
 script = ExtResource("2_p8r5b")
 movement_speed = 150.0
 
-[node name="ParentLogo" type="Sprite2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-4.98494, -26.6504)
+shape = SubResource("RectangleShape2D_a07np")
+
+[node name="ParentLogo" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(-0.0150299, -0.241)
 scale = Vector2(0.747742, 0.713851)
 texture = ExtResource("3_apj2e")
 
@@ -57,12 +62,6 @@ gravity_scale = 1.0
 position = Vector2(544, 352)
 scale = Vector2(0.296856, 0.296856)
 texture = ExtResource("5_gwuyb")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Tree"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/StaticBody2D"]
-position = Vector2(26.9489, 107.797)
-shape = SubResource("RectangleShape2D_n4tdo")
 
 [node name="Crate3" parent="." instance=ExtResource("4_onmak")]
 position = Vector2(392, 296)
